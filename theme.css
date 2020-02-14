@@ -1,0 +1,32 @@
+.menu {
+    background-color: darkblue;
+    height: 100px;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    }
+
+.nome{
+    color: white;
+    text-align: center;
+    font-size: 5em;
+    margin: 0px;
+    padding-top: 45px;
+    text-shadow: 4px 5px 3px black;
+}
+
+.body{
+    background-color: rgb(249, 249, 250);
+}
+
+.line{
+    background-color: lightcoral;
+    height: 3px;
+}
+ 
+.content{
+    height: 630px;
+    background-color:  rgb(247, 232, 206);
+
+
+}
