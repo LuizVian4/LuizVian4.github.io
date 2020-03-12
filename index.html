@@ -7,6 +7,8 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
 
   <style>
     .social-buttons li a {
@@ -19,11 +21,11 @@
       color: #fff;
       border-radius: 100%;
       outline: 0;
-      background-color: darkblue
+      background-color: black
     }
 
     .social-buttons li a:hover {
-      background-color: rgba(0, 0, 139, 0.466)
+      background-color: rgba(0, 0, 0, 0.493)
     }
 
     .masthead {
@@ -55,6 +57,40 @@
       text-decoration: none;
       color: white;
     }
+
+    .card {
+      background-color: rgb(231, 229, 229);
+    }
+
+    .card h4 {
+      font-size: .8rem;
+      font-family: 'Varela Round';
+      text-transform: uppercase;
+      letter-spacing: .15rem
+    }
+
+    .card hr {
+      border-color: black;
+      border-width: .25rem;
+      width: 3rem
+    }
+
+    .contact-section .social {
+      margin-top: 5rem
+    }
+
+    .showcase .showcase-text {
+      padding: 3rem
+    }
+
+    .showcase .showcase-img {
+      min-height: 30rem;
+      background-size: cover
+    }
+
+    .showcase .showcase-text {
+      padding: 7rem
+    }
   </style>
 </head>
 
@@ -64,18 +100,19 @@
   <header class="masthead">
     <div class="container">
       <div class="intro-text" style="padding-bottom: 320px;">
-        <div class="intro-lead-in">Site pessoal de</div>
+        <div class="intro-lead-in">Personal website of</div>
         <a class="intro-heading text-uppercase" href="#sobre">Luiz Felipe Viana</a>
       </div>
     </div>
   </header>
 
 
+
   <!-- Sobre -->
   <div class="container" style="padding-bottom: 150px; padding-top: 150px;">
     <div class="team-member" style="text-align:center">
       <img class="mx-auto rounded-circle" src="img/Luiz.jpg"
-        style="width:225px;height:225px;border:5px solid rgba(0, 0, 139, 0.466)">
+        style="width:225px;height:225px;border:5px solid  rgba(0, 0, 0, 0.493)">
       <h4 style="margin-top:25px">Luiz Viana</h4>
       <p class="text-muted">Engenheiro de Software</p>
       <ul class="list-inline social-buttons">
@@ -109,8 +146,42 @@
   </div>
 
 
-  <section class="bg-light page-section" id="sobre" style="padding-bottom: 0px; padding-top: 10px; margin: 0px;">
-    <div class="jumbotron p-4 p-md-5 text-white rounded" style="margin-top: 2rem; background-color: black">
+  <!-- Image Showcases -->
+  <section class="showcase" >
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+
+        <div class="col-lg-6 order-lg-2 text-white showcase-img"
+         style="background-image: url('img/bahia.jpg');" ></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Esporte Clube Bahia</h2>
+          <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great
+            on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/programming.jpg');"></div>
+        <div class="col-lg-6 my-auto showcase-text">
+          <h2>Programação</h2>
+          <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in
+            mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img"
+          style="background-image: url('img/cinema.jpg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Cinema</h2>
+          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper
+            customization options. Out of the box, just add your content and images, and your new landing page will be
+            ready to go!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="jumbotron p-4 p-md-5" style="background-color: black; margin: 0rem;">
       <h1 class="display-4 font-italic" style="color: white;">Luiz Felipe Viana Menezes Nascimento</h1>
       <p class="lead my-3" style="color: white;">Nascido no dia 04/06/2001, soteropolitano, 18 anos de idade.
         Estudante de Engenharia de Software pela Universidade Católica de Salvador (UCSAL), terceiro semestre.
@@ -118,6 +189,52 @@
     </div>
     </div>
   </section>
+
+
+  <!-- Contact Section -->
+  <section style="padding-bottom: 100px; padding-top: 50px; background-color: black;">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-map-marked-alt" style="padding-bottom: 20px;"></i>
+              <h4 class="text-uppercase m-0">Localização</h4>
+              <hr class="my-4">
+              <div class="small">Av. Pinto de Aguiar, 2589 - Pituaçu, Salvador - BA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-envelope" style="padding-bottom: 20px;"></i>
+              <h4 class="text-uppercase m-0">Email</h4>
+              <hr class="my-4">
+              <div class="small text-black-50">
+                <div style="text-decoration: none; color: black;">luizf.nascimento@ucsal.edu.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-mobile-alt" style="padding-bottom: 20px;"></i>
+              <h4 class="text-uppercase m-0">Telefone</h4>
+              <hr class="my-4">
+              <div class="small">+55 (71) 99671-4267</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 
 </html>
