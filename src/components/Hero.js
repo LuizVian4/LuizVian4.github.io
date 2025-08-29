@@ -8,9 +8,9 @@ const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   const texts = [
-    'Engenheiro de Software',
-    'Desenvolvedor Full-Stack',
-    'Co-fundador da ZYO ltda',
+    'Software Engineer',
+    'FullStack Developer',
+    'Co-founder of ZYO ltda',
   ];
 
   useEffect(() => {
@@ -67,12 +67,11 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-shadow">
             <SplitText 
               text="Luiz Felipe" 
-              className="text-gradient" 
+              className="text-white" 
               animationType="slideUp"
               staggerDelay={0.1}
               delay={0.5}
             />
-            <br />
             <SplitText 
               text="Viana" 
               className="text-white" 
@@ -120,7 +119,7 @@ const Hero = () => {
               onClick={scrollToAbout}
               className="btn-primary text-lg px-8 py-4"
             >
-              Conheça mais sobre mim
+              Know more about me
             </button>
           </div>
         </div>
