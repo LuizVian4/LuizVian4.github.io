@@ -1,48 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ChevronDown, Github, Linkedin, Instagram } from 'lucide-react';
 import SplitText from './SplitText';
+import { WordRotate } from './ui/WordRotate';
+import { DotPattern } from './ui/DotPattern';
 
 const Hero = () => {
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [displayText, setDisplayText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-
   const texts = [
     'Software Engineer',
     'FullStack Developer',
     'Co-founder of ZYO ltda',
   ];
 
-  useEffect(() => {
-    const typeSpeed = isDeleting ? 100 : 200;
-    const deleteSpeed = 50;
-    
-    if (!isDeleting && displayText === texts[currentTextIndex]) {
-      setTimeout(() => setIsDeleting(true), 2000);
-      return;
-    }
-    
-    if (isDeleting && displayText === '') {
-      setIsDeleting(false);
-      setCurrentTextIndex((prev) => (prev + 1) % texts.length);
-      return;
-    }
-
-    const timer = setTimeout(() => {
-      if (isDeleting) {
-        setDisplayText(texts[currentTextIndex].substring(0, displayText.length - 1));
-      } else {
-        setDisplayText(texts[currentTextIndex].substring(0, displayText.length + 1));
-      }
-    }, isDeleting ? deleteSpeed : typeSpeed);
-
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting, currentTextIndex, texts]);
-
   const socialLinks = [
     { icon: Github, href: 'https://github.com/LuizVian4', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/luiz-felipe-viana-9a3a28180', label: 'LinkedIn' },
-    
     { icon: Instagram, href: 'https://www.instagram.com/_luizviana_/', label: 'Instagram' },
   ];
 
@@ -60,9 +31,19 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
+      {/* Dot Pattern Overlay */}
+      <div className="absolute inset-0 pointer-events-none opacity-60">
+        <DotPattern
+          width={20}
+          height={20}
+          cr={0.5}
+          className="text-white/30"
+        />
+      </div>
+
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4">
-        <div className="max-w-4xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 w-full">
+        <div className="max-w-4xl mx-auto flex flex-col items-center">
           {/* Main Title */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-shadow">
             <SplitText 
@@ -86,12 +67,19 @@ const Hero = () => {
             Personal website of
           </p>
 
-          {/* Animated Text */}
+          {/* Word Rotate - MagicUI */}
           <div className="h-16 md:h-20 mb-8 flex items-center justify-center">
-            <span className="text-2xl md:text-4xl font-semibold text-primary-300 border-r-2 border-primary-400 pr-2 animate-pulse">
-              {displayText}
-              <span className="animate-pulse">|</span>
-            </span>
+            <WordRotate
+              words={texts}
+              duration={2500}
+              className="text-2xl md:text-4xl font-semibold text-primary-300"
+              motionProps={{
+                initial: { opacity: 0, y: -20 },
+                animate: { opacity: 1, y: 0 },
+                exit: { opacity: 0, y: 20 },
+                transition: { duration: 0.3, ease: 'easeOut' },
+              }}
+            />
           </div>
 
           {/* Social Links */}
@@ -113,20 +101,11 @@ const Hero = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="animate-bounce-in">
-            <button 
-              onClick={scrollToAbout}
-              className="btn-primary text-lg px-8 py-4"
-            >
-              Know more about me
-            </button>
-          </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex justify-center animate-bounce">
         <button 
           onClick={scrollToAbout}
           className="text-white hover:text-primary-300 transition-colors duration-300"
